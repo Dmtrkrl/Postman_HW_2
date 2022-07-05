@@ -1,0 +1,23 @@
+name,	age,	salary
+Dmitriy ,	32,	2000
+ Dmitriy,	32,	2000
+Dm,	32,	2000
+OlegOlegOlegOlegOlegOlegOlegOlegOlegOlegO,	18,	2000
+,	120,	2000
+Dmitriy,	17,	1000
+Dmitriy,	17 ,	1000
+Dmitriy,	121	1000
+Dmitriy,	11111	1000
+Dmitriy,	&&,	1000
+Dmitriy,	wasd,	1000
+Dmitriy,	      ,	1
+Dmitriy,	0,	1000000
+Dmitriy,	18,	wasd
+Dmitriy,	18,	&&
+Dmitriy,	18,	 
+Dmitriy,	18,	0
+Dmitriy,	120,	1000001
+OlegOlegOlegOlegOlegOlegOlegOlegOlegOlegO,	120,	1
+Dmitriy,	18,	1
+Dmt,	120,	1000000
+OlegOlegOlegOlegOlegOlegOlegOlegOlegOleg,	50,	500

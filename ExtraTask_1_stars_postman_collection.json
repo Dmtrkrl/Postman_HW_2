@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "5ac9356b-b04c-49c0-bcc9-b8af7d3c81f6",
+		"name": "ExtraTask_1_1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20593123"
+	},
+	"item": [
+		{
+			"name": "1.2_user_info_2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1. (ОБЯЗАТЕЛЬНОЕ И ВАЖНЕЙШЕЕ ЗАДАНИЕ) http://162.55.220.72:5005/user_info_2\r",
+							"// Необходимо провести тестирование API данного эндпоинта на валидацию входных параметров. \r",
+							"// Суть задания: проверить валидации каждого поля, подаваемого в эндпоинт на возможные значения. \r",
+							"// Будем УСЛОВНО считать, что негативная проверка должна возвращать какой угодно статус НО НЕ 200! \r",
+							"// Ваша задача написать тест кейсы в постмане таким образом, что одна негативная проверка - один запрос, \r",
+							"// позитивные проверки можно объединять в 1. Ваша задача протестировать исходя из требований на все возможные аспекты. \r",
+							"// В каждом запросе тест ТОЛЬКО НА СТАТУС КОД (200 - позитивное значение, не 200 - негативное). \r",
+							"// P.S. ЗАДАНИЕ НЕ ПОДРАЗУМЕВАЕТ, ЧТО ЭНДПОИНТ РАБОТАЕТ СОГЛАСНО НАПИСАННЫМ ТРЕБОВАНИЯМ. МЫ УЧИМСЯ ПИСАТЬ ТЕСТЫ НА API!\r",
+							"// Требования:\r",
+							"// 1) Name: 3-40 символов включительно, запрещены префиксные и постфиксные пробелы. Поле обязательное\r",
+							"// 2) Age: только целые цифры в диапазоне 18-120 включительно. Поле обязательное\r",
+							"// 3) Salary: только целые цифры в диапазоне 1-1000000 включительно. Поле обязательное\r",
+							"\r",
+							"// 1****. Преобразовать задание 1 таким образом, чтобы вы отправляли параметры через CSV файл. \r",
+							"// У вас будет ровно 1 запрос в коллекции, который будет повторяться столько раз, сколько строк в CSV файле. \r",
+							"// Также должна быть написана функция в тестах, которая проверяет валидность входящих данных, и \r",
+							"// в зависимости от этого проверяет на статус 200 или НЕ 200.\r",
+							"\r",
+							"let reqData = request.data;\r",
+							"\r",
+							"function validName(reqData) {\r",
+							"    if (reqData.name.length >= 3 && reqData.name.length <= 40 && reqData.name.trim() === reqData.name ) {\r",
+							"        return true;\r",
+							"    }\r",
+							"    return false;\r",
+							"}\r",
+							"\r",
+							"function validAge(reqData) {\r",
+							"    if (Number(reqData.age) >= 18 && Number(reqData.age) <= 120 && Number.isInteger(+reqData.age)) {\r",
+							"        return true;\r",
+							"    }\r",
+							"    return false;\r",
+							"}\r",
+							"\r",
+							"function validSalary(reqData) {\r",
+							"    if (Number(reqData.salary) >= 1 && Number(reqData.salary) <= 1000000 && Number.isInteger(+reqData.salary)) {\r",
+							"        return true;\r",
+							"    }\r",
+							"    return false;\r",
+							"}\r",
+							"\r",
+							"if (validName(reqData) && validAge(reqData) && validSalary(reqData)) {\r",
+							"    pm.test(`Status code is 200`, function() {\r",
+							"        pm.response.to.have.status(200);\r",
+							"    });\r",
+							"} else {\r",
+							"    pm.test(`Status code is not 200`, function() {\r",
+							"        pm.response.not.to.have.status(200);\r",
+							"    });\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "{{name}}",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "{{age}}",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "{{salary}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://162.55.220.72:5007/user_info_2",
+					"protocol": "http",
+					"host": [
+						"162",
+						"55",
+						"220",
+						"72"
+					],
+					"port": "5007",
+					"path": [
+						"user_info_2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
