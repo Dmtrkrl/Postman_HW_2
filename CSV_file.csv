@@ -1,0 +1,28 @@
+name, age, salary
+Dmitriy,  32,  1000
+ , , 
+Dmi, 32, 1000
+Dm, 32, 1000
+"   Dmitriy", 32, 1000
+Dmitriy, 32, 1000
+DimaDimaDimaDimaDimaDimaDimaDimaDimaDima, 32, 1000
+, 32, 1000
+0, 32, 1000
+Dmitriy,  20.05,  1000
+DimaDimaDimaDimaDimaDimaDimaDimaDimaDimaD,  120, 999999
+Dmitriy,  121, 999999
+111111,  18, 999999
+Dima   ,  17, 999999
+Dima,  , 999999
+Dima,  0, 999999
+Dima,  120, 1000000
+Dima,  120, 1000001
+Dima,  120, 1
+Dima,  120, 0
+Dima,  120, fff
+Dima,  120, 20.05
+Dima,  120, 
+Dima,  fff, 999999
+Dim,  1f, 999999
+Di,  10, 1
+Di,  аа, аа
